@@ -1,0 +1,78 @@
+<div class="container">
+  <h1>Formulario reactivo</h1>
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" required name="nombre" formControlName="nombre" >
+      <div *ngIf="reactiveForm.get('nombre')?.invalid && reactiveForm.get('nombre')?.touched">
+        error
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Correo Electrónico</label>
+      <input type="email" class="form-control" required name="email" formControlName="email" placeholder="@example.com">
+      <div *ngIf="reactiveForm.get('email')?.invalid && reactiveForm.get('email')?.touched">
+        error
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Teléfono</label>
+      <input type="number" class="form-control" required name="telefono" formControlName="telefono" >
+      <div *ngIf="reactiveForm.get('telefono')?.invalid && reactiveForm.get('telefono')?.touched">
+        error
+      </div>
+      
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Dirección</label>
+      <input type="text" class="form-control" required name="direccion" formControlName="direccion" >
+      <div *ngIf="reactiveForm.get('direccion')?.invalid && reactiveForm.get('direccion')?.touched">
+        error
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Ciudad</label>
+      <input type="text" class="form-control" required name="ciudad" formControlName="ciudad" >
+      <div *ngIf="reactiveForm.get('ciudad')?.invalid && reactiveForm.get('ciudad')?.touched">
+        error
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Estado</label>
+      <input type="text" class="form-control" required name="estado" formControlName="estado" >
+      <div *ngIf="reactiveForm.get('estado')?.invalid && reactiveForm.get('estado')?.touched">
+        error
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Código Postal</label>
+      <input type="number" class="form-control" required name="codigoPostal" formControlName="codigoPostal" >
+      <div *ngIf="reactiveForm.get('codigoPostal')?.invalid && reactiveForm.get('codigoPostal')?.touched">
+        error
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">País</label>
+      <input type="pais" class="form-control" required name="pais" formControlName="pais" >
+      <div *ngIf="reactiveForm.get('pais')?.invalid && reactiveForm.get('pais')?.touched">
+        error
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nombre de usuario</label>
+      <input type="text" class="form-control" required name="nombreDeUsuario" formControlName="nombreDeUsuario" >
+      <div *ngIf="reactiveForm.get('nombreDeUsuario')?.invalid && reactiveForm.get('nombreDeUsuario')?.touched">
+        error
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" formControlName="password" >
+      <div *ngIf="reactiveForm.get('password')?.invalid && reactiveForm.get('password')?.touched">
+        error
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="reactiveForm.invalid">Submit</button>
+  </form>
+
+</div>
